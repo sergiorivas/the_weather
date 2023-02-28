@@ -15,7 +15,7 @@
 - [ ] Annotate (Models)
 - [ ] CORS
 
-# Backend
+## Backend
 - [ ] Define models
 - [ ] Migration
 - [ ] Model with validations
@@ -27,10 +27,10 @@
 - [ ] Weather public APIs
 - [ ] Location public API (from address)
 
-# Frontend Setup
+## Frontend Setup
 - [ ] Dockerized frontend
 
-# Frontend
+## Frontend
 - [ ] Layout
 - [ ] Client
 - [ ] Connections
