@@ -1,0 +1,19 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'db/test/seeds.rb'
+    - 'db/schema.rb'
+    - 'bin/**/*'
+  TargetRubyVersion: 3.1
+
+Style/Documentation:
+  Enabled: false
