@@ -1,0 +1,31 @@
+version: '3'
+services:
+  weather_api:
+    build: ./weather_api
+    command: sh -c "rm -f tmp/pids/server.pid && bundle && bundle exec rake db:prepare && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - ./weather_api:/app
+    ports:
+      - "3000:3000"
+    environment:
+      - DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:14.2-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./:/home
+    ports:
+      - "5450:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=weather_development
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 30s
+      retries: 3
+volumes:
+  postgres_data:
