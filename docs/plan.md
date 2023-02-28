@@ -9,11 +9,11 @@
 
 ## Backend Setup
 - [x] Dockerized Rails API
-- [ ] Rspec
-- [ ] Rubocop
-- [ ] FactoryBot
-- [ ] Annotate (Models)
-- [ ] CORS
+- [x] Rspec
+- [x] Rubocop
+- [x] FactoryBot
+- [x] Annotate (Models)
+- [x] CORS
 
 ## Backend
 - [ ] Define models
