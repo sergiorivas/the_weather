@@ -24,8 +24,15 @@
 - [ ] GrapqhQL layer
 
 ## Research
-- [ ] Weather public APIs
-- [ ] Location public API (from address)
+- [x] Weather public APIs
+- [x] Location public API (from address)
+
+### Goal
+- Find APIs that allows you to retreive weather data based on an address
+
+### Outcome
+- It seems weather API needs latitude and longitude as an input
+- We will need another API for translate an address to latitude and longitude
 
 ## Frontend Setup
 - [ ] Dockerized frontend
