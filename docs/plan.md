@@ -8,7 +8,7 @@
 # Tasks
 
 ## Backend Setup
-- [ ] Dockerized Rails API
+- [x] Dockerized Rails API
 - [ ] Rspec
 - [ ] Rubocop
 - [ ] FactoryBot
