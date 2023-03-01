@@ -55,7 +55,86 @@ docker-compose run --rm weather_api rspec --format=documentation
 - ~~Migrations for weather~~ (Not needed)
 - [x] Wheater service layer
 - [x] Wheater service cache feature
-- [ ] GrapqhQL layer
+- [x] GrapqhQL layer
+
+### GraphQL Examples:
+
+#### Query
+```grapql
+query{
+    forecast(addressQuery: "One Apple Park Way, Cupertino"){
+        address {
+            latitude
+            longitude
+            formalAddress
+            zipcode
+            informalAddress
+        }
+        forecasts {
+            temperature
+            temperatureUnit
+            startTime
+            endTime
+            name
+            relativeHumitidy
+            windSpeed
+            windDirection
+            iconUrl
+            summary
+            forecastDescription
+        }
+        createdAt
+        fromCache
+    }
+}
+```
+#### Response
+```json
+{
+    "data": {
+        "forecast": {
+            "address": {
+                "latitude": 37.330614,
+                "longitude": -122.011627,
+                "formalAddress": "Apple Park Way, Cupertino, CA 95014 USA",
+                "zipcode": "95014",
+                "informalAddress": "🇺🇸 , Cupertino, California, United States"
+            },
+            "forecasts": [
+                {
+                    "temperature": 54,
+                    "temperatureUnit": "F",
+                    "startTime": "2023-03-01 09:00:00 -0800",
+                    "endTime": "2023-03-01 18:00:00 -0800",
+                    "name": "Today",
+                    "relativeHumitidy": 80,
+                    "windSpeed": "12 to 18 mph",
+                    "windDirection": "NW",
+                    "iconUrl": "https://api.weather.gov/icons/land/day/few?size=medium",
+                    "summary": "Sunny",
+                    "forecastDescription": "Sunny. High near 54, with temperatures falling to around 52 in the afternoon. Northwest wind 12 to 18 mph, with gusts as high as 24 mph."
+                },
+                {
+                    "temperature": 32,
+                    "temperatureUnit": "F",
+                    "startTime": "2023-03-01 18:00:00 -0800",
+                    "endTime": "2023-03-02 06:00:00 -0800",
+                    "name": "Tonight",
+                    "relativeHumitidy": 87,
+                    "windSpeed": "6 to 13 mph",
+                    "windDirection": "WNW",
+                    "iconUrl": "https://api.weather.gov/icons/land/night/few?size=medium",
+                    "summary": "Mostly Clear then Widespread Frost",
+                    "forecastDescription": "Widespread frost after 1am. Mostly clear. Low around 32, with temperatures rising to around 34 overnight. West northwest wind 6 to 13 mph."
+                },
+                ...
+            ],
+            "createdAt": "2023-03-01 17:58:35 UTC",
+            "fromCache": false
+        }
+    }
+}
+```
 
 ## Frontend Setup
 - [ ] Dockerized frontend
