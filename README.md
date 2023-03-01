@@ -54,7 +54,7 @@ docker-compose run --rm weather_api rspec --format=documentation
 - ~~Define models for weather~~ (Not needed)
 - ~~Migrations for weather~~ (Not needed)
 - [x] Wheater service layer
-- [ ] Wheater service cache feature
+- [x] Wheater service cache feature
 - [ ] GrapqhQL layer
 
 ## Frontend Setup
