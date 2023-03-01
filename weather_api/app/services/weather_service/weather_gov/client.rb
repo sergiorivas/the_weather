@@ -13,7 +13,6 @@ module WeatherService
       def forecast(latitude:, longitude:)
         forecast_data = []
         response = request_forecast(latitude:, longitude:)
-        Rails.logger.debug response
         wheather_data = JSON.parse(response)['properties']['periods']
         wheather_data.each do |weather_data_point|
           forecast_data << WeatherService::Base::WeatherDetail.new(
@@ -31,7 +30,7 @@ module WeatherService
           )
         end
         forecast_data
-      rescue StandardError
+      rescue StandardError => e
         raise 'Weather not available'
       end
 
@@ -40,7 +39,7 @@ module WeatherService
       def request_forecast(latitude:, longitude:)
         response = @connection.get("/points/#{latitude},#{longitude}").body
         forecast_url = JSON.parse(response)['properties']['forecast']
-        Rails.logger.debug @connection.get(forecast_url).body
+        @connection.get(forecast_url).body
       end
     end
   end
