@@ -1,6 +1,6 @@
 module LocationService
   module Base
-    class LocationInterface
+    class LocationClientInterface
       def locate(address:)
         raise NotImplementedError
       end

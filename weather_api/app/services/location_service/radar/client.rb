@@ -1,6 +1,6 @@
 module LocationService
   module Radar
-    class Client < LocationService::Base::LocationInterface
+    class Client < LocationService::Base::LocationClientInterface
       def initialize
         @connection = Faraday.new(
           url: 'https://api.radar.io',
