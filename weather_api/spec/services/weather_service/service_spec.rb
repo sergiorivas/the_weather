@@ -39,10 +39,19 @@ RSpec.describe WeatherService::Service do
   end
 
   context 'when there is a forecast' do
-    it 'retreives the weather info' do
+    it 'retreives the weather info without cache' do
       weather_info = subject.forecast(address_query: 'This is an Address')
       expect(weather_info.address.to_json).to eq(address.to_json)
       expect(weather_info.forecasts.to_json).to eq(forecasts.to_json)
+      expect(weather_info.from_cache).to be(false)
+    end
+
+    it 'retreives the weather info from cache' do
+      subject.forecast(address_query: 'This is an Address')
+      weather_info = subject.forecast(address_query: 'This is an Address')
+      expect(weather_info.address.to_json).to eq(address.to_json)
+      expect(weather_info.forecasts.to_json).to eq(forecasts.to_json)
+      expect(weather_info.from_cache).to be(true)
     end
   end
 end
