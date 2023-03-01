@@ -25,6 +25,17 @@ docker-compose run --rm weather_api rspec --format=documentation
 
 # Tasks
 
+## Research
+- [x] Weather public APIs
+- [x] Location public API (from address)
+
+### Goal
+- Find APIs that allows you to retreive weather data based on an address
+
+### Outcome
+- It seems weather API needs latitude and longitude as an input
+- We will need another API for translate an address to latitude and longitude
+
 ## Backend Setup
 - [x] Dockerized Rails API
 - [x] Rspec
@@ -44,17 +55,6 @@ docker-compose run --rm weather_api rspec --format=documentation
 - [ ] Weather clients
 - [ ] Wheater service layer
 - [ ] GrapqhQL layer
-
-## Research
-- [x] Weather public APIs
-- [x] Location public API (from address)
-
-### Goal
-- Find APIs that allows you to retreive weather data based on an address
-
-### Outcome
-- It seems weather API needs latitude and longitude as an input
-- We will need another API for translate an address to latitude and longitude
 
 ## Frontend Setup
 - [ ] Dockerized frontend
