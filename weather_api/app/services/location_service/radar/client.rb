@@ -14,11 +14,17 @@ module LocationService
       def locate(address:)
         response = request_address(address:)
         address_data = JSON.parse(response)['addresses'].first
+
+        informal_address = if address_data['postalCode']
+                             "#{address_data['countryFlag']} #{address_data['neighborhood']}, #{address_data['city']}, #{address_data['state']}, #{address_data['country']}"
+                           else
+                             address_data['formattedAddress']
+                           end
         LocationService::Base::Address.new(
           latitude: address_data['latitude'],
           longitude: address_data['longitude'],
           zipcode: address_data['postalCode'],
-          informal_address: "#{address_data['countryFlag']} #{address_data['neighborhood']}, #{address_data['city']}, #{address_data['state']}, #{address_data['country']}",
+          informal_address:,
           formal_address: address_data['formattedAddress']
         )
       rescue StandardError
