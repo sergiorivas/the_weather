@@ -16,11 +16,15 @@
 - [x] CORS
 
 ## Backend
-- [ ] Define models
-- [ ] Migration
-- [ ] Model with validations
-- [ ] Clients
-- [ ] Service layer
+- [x] Define models for location
+- [x] Migrations for location
+- [x] Location client (radar API)
+- [x] Location service layer
+- [x] Location service cache logic
+- [ ] Define models for weather
+- [ ] Migrations for weather
+- [ ] Weather clients
+- [ ] Wheater service layer
 - [ ] GrapqhQL layer
 
 ## Research
