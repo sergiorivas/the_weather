@@ -50,9 +50,9 @@ docker-compose run --rm weather_api rspec --format=documentation
 - [x] Location client (radar API)
 - [x] Location service layer
 - [x] Location service cache logic
+- [x] Weather client
 - [ ] Define models for weather
 - [ ] Migrations for weather
-- [ ] Weather clients
 - [ ] Wheater service layer
 - [ ] GrapqhQL layer
 
