@@ -4,7 +4,6 @@ module LocationService
       def initialize
         @connection = Faraday.new(
           url: 'https://api.radar.io',
-          params: { param: '1' },
           headers: {
             'Content-Type' => 'application/json',
             'Authorization' => ENV.fetch('RADAR_SECRET_KEY', nil)
