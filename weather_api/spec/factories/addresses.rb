@@ -5,8 +5,8 @@
 #  id               :bigint           not null, primary key
 #  formal_address   :string
 #  informal_address :string
-#  latitude         :integer
-#  longitude        :integer
+#  latitude         :float
+#  longitude        :float
 #  zipcode          :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
