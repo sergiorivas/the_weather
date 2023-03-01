@@ -14,6 +14,6 @@
 #
 FactoryBot.define do
   factory :address_search do
-    query { "my search" }
+    query { 'my search' }
   end
 end

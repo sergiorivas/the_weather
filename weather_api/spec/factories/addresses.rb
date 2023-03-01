@@ -15,8 +15,8 @@ FactoryBot.define do
   factory :address do
     latitude { 1 }
     longitude { 1 }
-    zipcode { "11111" }
-    formal_address { "formal address" }
-    informal_address { "informal address" }
+    zipcode { '11111' }
+    formal_address { 'formal address' }
+    informal_address { 'informal address' }
   end
 end

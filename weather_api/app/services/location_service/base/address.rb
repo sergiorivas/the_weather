@@ -10,6 +10,10 @@ module LocationService
         @zipcode = zipcode
         @informal_address = informal_address
       end
+
+      def self.sanitize(address:)
+        address.split.map(&:strip).join(' ').upcase
+      end
     end
   end
 end

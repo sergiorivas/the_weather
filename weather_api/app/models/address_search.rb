@@ -13,4 +13,5 @@
 #  index_address_searches_on_address_id  (address_id)
 #
 class AddressSearch < ApplicationRecord
+  belongs_to :address
 end
