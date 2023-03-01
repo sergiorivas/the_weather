@@ -54,6 +54,6 @@ group :development do
   gem 'rubocop-rspec', require: false
 end
 
-gem 'graphql'
 gem 'faraday'
+gem 'graphql'
 gem 'rack-cors'
