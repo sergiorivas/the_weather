@@ -37,7 +37,7 @@ module WeatherService
       private
 
       def request_forecast(latitude:, longitude:)
-        response = @connection.get("/points/#{latitude},#{longitude}").body
+        response = @connection.get("/points/#{latitude.round(4)},#{longitude.round(4)}").body
         forecast_url = JSON.parse(response)['properties']['forecast']
         @connection.get(forecast_url).body
       end
