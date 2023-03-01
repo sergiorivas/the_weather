@@ -57,7 +57,13 @@ docker-compose run --rm weather_api rspec --format=documentation
 - [x] Wheater service cache feature
 - [x] GrapqhQL layer
 
-### GraphQL Examples:
+### GraphQL:
+
+```
+POST http://localhost:3000/graphql
+```
+
+with payload `query=`
 
 #### Query
 ```grapql
