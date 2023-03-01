@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_01_015456) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_01_015947) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "address_searches", force: :cascade do |t|
+    t.string "query"
+    t.bigint "address_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_address_searches_on_address_id"
+  end
 
   create_table "addresses", force: :cascade do |t|
     t.integer "latitude"
