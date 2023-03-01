@@ -143,7 +143,7 @@ query{
 ```
 
 ## Frontend Setup
-- [ ] Dockerized frontend
+- [x] Dockerized frontend
 
 ## Frontend
 - [ ] Layout
