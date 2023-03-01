@@ -7,13 +7,19 @@ module LocationService
     def locate(address_query:)
       sanitized_address_query = LocationService::Base::Address.sanitize(address: address_query)
       search = AddressSearch.find_by(query: sanitized_address_query)
-      return search.address if search
+      if search
+        return LocationService::Base::Address.new(
+          latitude: search.address.latitude,
+          longitude: search.address.longitude,
+          formal_address: search.address.formal_address,
+          zipcode: search.address.zipcode,
+          informal_address: search.address.informal_address
+        )
+      end
 
       address = @client.locate(address: address_query)
-      _db_address = save_address_and_query(
-        query: sanitized_address_query,
-        address:
-      )
+      save_address_and_query(query: sanitized_address_query, address:)
+      address
     end
 
     private
