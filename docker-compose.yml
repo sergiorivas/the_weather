@@ -12,8 +12,8 @@ services:
     depends_on:
       - postgres
   frontend:
-    image: node:19-alpine3.16
-    command: sh -c "cd /app && npm run dev"
+    build: ./frontend
+    command: sh -c "npm install && npm run dev"
     volumes:
       - ./frontend:/app
     ports:
