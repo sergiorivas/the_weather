@@ -4,6 +4,11 @@
 - Cache the forecast details for 30 minutes for all subsequent requests by zip codes.
 - Display indicator if result is pulled from cache.
 
+## Architecture
+
+![Initial](/docs/images/architecture.png)
+
+
 ## How to run?
 
 ```
