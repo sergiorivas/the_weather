@@ -18,6 +18,48 @@ Open: http://localhost:5173/
 docker-compose run --rm weather_api rspec --format=documentation
 ```
 
+
+### Output
+
+```
+LocationService::Base::Address
+  .sanitize
+    sanitizes the string
+
+LocationService::Radar::Client
+  when a address is available
+    creates an address
+  when there is not connection to the API
+    raise an error
+
+LocationService::Service
+  when there is not address before
+    gets an address from client
+    saves the address and search
+  when there is an address before
+    uses the existent address and creates the search
+  when there is an similar query before
+    hits the cache
+
+WeatherService::Service
+  when there is a forecast
+    retreives the weather info without cache
+    retreives the weather info from cache
+
+WeatherService::WeatherGov::Client
+  when forecast is available
+    creates an address
+  when there is not connection to the API
+    raise an error
+
+Finished in 0.16805 seconds (files took 1.45 seconds to load)
+11 examples, 0 failures
+```
+
+# Tecnichal Video
+
+- https://share.getcloudapp.com/jkuA1pOY
+
 # Screens
 
 ## Initial State
