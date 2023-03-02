@@ -146,6 +146,6 @@ query{
 - [x] Dockerized frontend
 
 ## Frontend
-- [ ] Layout
-- [ ] Client
-- [ ] Connections
+- [ ] UI
+- [x] Client
+- [x] Connections
