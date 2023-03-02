@@ -10,11 +10,28 @@
 docker-compose up
 ```
 
+Open: http://localhost:5173/
+
 ## How to run backend tests
 
 ```
 docker-compose run --rm weather_api rspec --format=documentation
 ```
+
+# Screens
+
+## Initial State
+
+![Initial](/docs/images/initial.png)
+
+## Getting the Weather
+
+![Initial](/docs/images/weather.png)
+
+## Error
+
+![Initial](/docs/images/error.png)
+
 
 # Strategy
 
@@ -28,13 +45,6 @@ docker-compose run --rm weather_api rspec --format=documentation
 ## Research
 - [x] Weather public APIs
 - [x] Location public API (from address)
-
-### Goal
-- Find APIs that allows you to retreive weather data based on an address
-
-### Outcome
-- It seems weather API needs latitude and longitude as an input
-- We will need another API for translate an address to latitude and longitude
 
 ## Backend Setup
 - [x] Dockerized Rails API
@@ -56,6 +66,30 @@ docker-compose run --rm weather_api rspec --format=documentation
 - [x] Wheater service layer
 - [x] Wheater service cache feature
 - [x] GrapqhQL layer
+
+## Frontend Setup
+- [x] Dockerized frontend
+
+## Frontend
+- [x] UI
+- [x] Client
+- [x] Connections
+
+# Analisys
+
+## Research
+
+### Goal
+- Find APIs that allows you to retreive weather data based on an address
+
+### Outcome
+- It seems weather API needs latitude and longitude as an input
+- We will need another API for translate an address to latitude and longitude
+
+## API
+
+- Backend Rails 7 / 3.2
+- FrontEnd VueJS / TailwindCSS
 
 ### GraphQL:
 
@@ -141,11 +175,3 @@ query{
     }
 }
 ```
-
-## Frontend Setup
-- [x] Dockerized frontend
-
-## Frontend
-- [ ] UI
-- [x] Client
-- [x] Connections
